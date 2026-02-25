@@ -3,30 +3,27 @@ import fs from 'fs';
 export const appendFileSync = (path, data) => {
     try {
         fs.appendFileSync(path, data);
-        console.log("Data appended successfully");
+        console.log("Data has been appended successfully.");
     } catch (error) {
-        console.log("Error appending data:", error);
+        console.log("unable to append file");
     }
-};
+}
 
 export const writeFileSync = (path, data) => {
     try {
         fs.writeFileSync(path, data);
-        console.log("File written successfully");
+        console.log("Data has been successfully written...");
     } catch (error) {
-        console.log("Error writing file:", error);
+        console.log("unable to write data");
     }
-};
-
-writeFileSync('./example.txt', 'This data has been written through sync func:writeFileSync');
-
+}
 export const readFileSync = (path) => {
     try {
         const data = fs.readFileSync(path, 'utf-8');
-        console.log("File read successfully:", data);
+        console.log(data, "Data has been read successfully...");
     } catch (error) {
-        console.log("Error reading file:", error);
+        console.log("unable to read data");
     }
-};
-
-readFileSync('./example.txt');
+}
+// readFileSync("./example.txt");
+// writeFileSync("./example.txt","This data has been written through sync func:writeFileSync()");
